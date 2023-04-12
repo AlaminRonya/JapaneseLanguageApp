@@ -210,7 +210,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:id="@+id/card22Image"
-                        android:src="@drawable/japan1"
+                        android:src="@drawable/grammar"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"/>
 
@@ -247,7 +247,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/card13Name"
-                        android:text="Card13 Name"
+                        android:text="Kanji"
                         android:textSize="20sp"
                         android:textColor="@color/lavender"
                         android:fontFamily="@font/poppins_semibold"
@@ -259,7 +259,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:id="@+id/card13Image"
-                        android:src="@drawable/japan1"
+                        android:src="@drawable/kanji"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"/>
 
