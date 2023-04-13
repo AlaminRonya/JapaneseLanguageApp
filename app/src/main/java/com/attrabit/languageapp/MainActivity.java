@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -42,10 +43,21 @@ public class MainActivity extends AppCompatActivity {
 //            FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
 //            transaction.replace(R.id.fragmentContainerView, fragment).commit();
 
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.fragmentContainerView, new ProfileFragment(), null).commit();
+            // TODO: 4/12/2023 working this below the code
+//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//            transaction.replace(R.id.fragmentContainerView, new ProfileFragment(), null).commit();
+
+
+            replaceFragment(new ProfileFragment());
         }
         return true;
 //        return super.onOptionsItemSelected(item);
+    }
+
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentContainerView, fragment);
+        fragmentTransaction.commit();
     }
 }

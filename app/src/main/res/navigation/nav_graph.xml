@@ -15,4 +15,14 @@
         android:name="com.attrabit.languageapp.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.attrabit.languageapp.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.attrabit.languageapp.ScoreFragment"
+        android:label="fragment_score"
+        tools:layout="@layout/fragment_score" />
 </navigation>
