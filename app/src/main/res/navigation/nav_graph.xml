@@ -25,4 +25,9 @@
         android:name="com.attrabit.languageapp.ScoreFragment"
         android:label="fragment_score"
         tools:layout="@layout/fragment_score" />
+    <fragment
+        android:id="@+id/kanjiFragment"
+        android:name="com.attrabit.languageapp.KanjiFragment"
+        android:label="fragment_kanji"
+        tools:layout="@layout/fragment_kanji" />
 </navigation>
