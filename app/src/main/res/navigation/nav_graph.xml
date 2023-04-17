@@ -9,7 +9,14 @@
         android:id="@+id/homeFragment"
         android:name="com.attrabit.languageapp.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_kanjiFragment"
+            app:destination="@id/kanjiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_drawFragment"
+            app:destination="@id/drawFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.attrabit.languageapp.ProfileFragment"
@@ -30,4 +37,9 @@
         android:name="com.attrabit.languageapp.KanjiFragment"
         android:label="fragment_kanji"
         tools:layout="@layout/fragment_kanji" />
+    <fragment
+        android:id="@+id/drawFragment"
+        android:name="com.attrabit.languageapp.DrawFragment"
+        android:label="fragment_draw"
+        tools:layout="@layout/fragment_draw" />
 </navigation>

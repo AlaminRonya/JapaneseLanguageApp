@@ -8,57 +8,43 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link KanjiFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.attrabit.languageapp.adapter.KanjiListAdapter;
+import com.attrabit.languageapp.databinding.FragmentHomeBinding;
+import com.attrabit.languageapp.databinding.FragmentKanjiBinding;
+import com.attrabit.languageapp.model.ListData;
+
+import java.util.ArrayList;
+
+
 public class KanjiFragment extends Fragment {
+    KanjiListAdapter listAdapter;
+    ArrayList<ListData> dataArrayList = new ArrayList<>();
+    ListData listData;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    private FragmentKanjiBinding binding;
     public KanjiFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment KanjiFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static KanjiFragment newInstance(String param1, String param2) {
-        KanjiFragment fragment = new KanjiFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kanji, container, false);
+
+        binding = FragmentKanjiBinding.inflate(inflater, container, false);
+
+        int[] imageList = {R.drawable.kanji, R.drawable.kanji, R.drawable.kanji, R.drawable.kanji, R.drawable.kanji, R.drawable.kanji, R.drawable.kanji};
+        int[] ingredientList = {R.string.pastaIngredients, R.string.maggiIngredients,R.string.cakeIngredients,R.string.pancakeIngredients,R.string.pizzaIngredients, R.string.burgerIngredients, R.string.friesIngredients};
+        int[] descList = {R.string.pastaDesc, R.string.maggieDesc, R.string.cakeDesc,R.string.pancakeDesc,R.string.pizzaDesc, R.string.burgerDesc, R.string.friesDesc};
+        String[] nameList = {"Kanji", "Kanji", "Kanji", "Kanji", "Kanji","Kanji", "Kanji"};
+        String[] timeList = {"30 ", "2 ", "45 ","10 ", "60 ", "45 ", "30 "};
+        for (int i = 0; i < imageList.length; i++){
+            listData = new ListData(nameList[i], timeList[i], ingredientList[i], descList[i], imageList[i]);
+            dataArrayList.add(listData);
+        }
+        listAdapter = new KanjiListAdapter(requireActivity(), dataArrayList);
+        binding.listview.setAdapter(listAdapter);
+
+        return binding.getRoot();
     }
 }
