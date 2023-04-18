@@ -1,5 +1,6 @@
 package com.attrabit.languageapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -29,7 +30,9 @@ public class HomeFragment extends Fragment implements OnQueryItemSelectedComplet
         binding.card13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(requireActivity(), R.id.fragmentContainerView).navigate(R.id.action_homeFragment_to_kanjiFragment);
+                //Navigation.findNavController(requireActivity(), R.id.fragmentContainerView).navigate(R.id.action_homeFragment_to_kanjiFragment);
+                Intent i = new Intent(getContext(),DrawningActivity.class);
+                startActivity(i);
             }
         });
         binding.card1.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +43,7 @@ public class HomeFragment extends Fragment implements OnQueryItemSelectedComplet
             }
         });
         // Inflate the layout for this fragment
+
         return binding.getRoot();
     }
 
